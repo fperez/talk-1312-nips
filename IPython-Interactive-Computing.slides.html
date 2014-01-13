@@ -27,9 +27,6 @@ document.write( '<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/
 <script src="http://cdn.jsdelivr.net/reveal.js/2.5.0/lib/js/html5shiv.js"></script>
 <![endif]-->
 
-<!-- Get Font-awesome from cdn -->
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
-
 <style type="text/css">
     .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
 .clearfix:after{clear:both;}
@@ -1418,6 +1415,9 @@ ul.icons-ul{list-style-type:none;text-indent:-0.7142857142857143em;margin-left:2
 .start{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;}
 .end{-webkit-box-pack:end;-moz-box-pack:end;box-pack:end;}
 .center{-webkit-box-pack:center;-moz-box-pack:center;box-pack:center;}
+.align-start{-webkit-box-align:start;-moz-box-align:start;box-align:start;}
+.align-end{-webkit-box-align:end;-moz-box-align:end;box-align:end;}
+.align-center{-webkit-box-align:center;-moz-box-align:center;box-align:center;}
 body{background-color:white;position:absolute;left:0px;right:0px;top:0px;bottom:0px;overflow:visible;}
 div#header{display:none;}
 #ipython_notebook{padding-left:16px;}
@@ -1468,13 +1468,17 @@ input.engine_num_input{height:20px;margin-bottom:2px;padding-top:0;padding-botto
 .ansibgpurple{background-color:magenta;}
 .ansibgcyan{background-color:cyan;}
 .ansibggray{background-color:gray;}
-div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;padding:5px 5px 5px 0px;margin:0px;outline:none;}div.cell.selected{border-radius:4px;border:thin #ababab solid;}
+div.cell{border:1px solid transparent;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;padding:5px 5px 5px 0px;margin:2px 0px 2px 7px;outline:none;}div.cell.selected{border-radius:4px;border:thin #ababab solid;}
 div.prompt{min-width:11ex;padding:0.4em;margin:0px;font-family:monospace;text-align:right;line-height:1.231em;}
-div.inner_cell{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;}
-div.prompt:empty{padding-top:0;padding-bottom:0;}
 div.input{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
 div.input_area{border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;}
 div.input_prompt{color:navy;border-top:1px solid transparent;}
+div.output_wrapper{margin-top:5px;position:relative;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
+div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:4px;-webkit-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);-moz-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);}
+div.output_collapsed{margin:0px;padding:0px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
+div.out_prompt_overlay{height:100%;padding:0px 0.4em;position:absolute;border-radius:4px;}
+div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000000;-moz-box-shadow:inset 0 0 1px #000000;box-shadow:inset 0 0 1px #000000;background:rgba(240, 240, 240, 0.5);}
+div.output_prompt{color:darkred;}
 .CodeMirror{line-height:1.231em;height:auto;background:none;}
 .CodeMirror-scroll{overflow-y:hidden;overflow-x:auto;}
 @-moz-document url-prefix(){.CodeMirror-scroll{overflow-x:hidden;}}.CodeMirror-lines{padding:0.4em;}
@@ -1502,22 +1506,16 @@ pre .coffeescript .javascript,pre .javascript .xml,pre .tex .formula,pre .xml .j
 .cm-s-ipython span.cm-operator{color:#AA22FF;font-weight:bold;}
 .cm-s-ipython span.cm-meta{color:#AA22FF;}
 .cm-s-ipython span.cm-tab{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAMCAYAAAAkuj5RAAAAAXNSR0IArs4c6QAAAGFJREFUSMft1LsRQFAQheHPowAKoACx3IgEKtaEHujDjORSgWTH/ZOdnZOcM/sgk/kFFWY0qV8foQwS4MKBCS3qR6ixBJvElOobYAtivseIE120FaowJPN75GMu8j/LfMwNjh4HUpwg4LUAAAAASUVORK5CYII=);background-position:right;background-repeat:no-repeat;}
-div.output_wrapper{position:relative;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
-div.output_scroll{height:24em;width:100%;overflow:auto;border-radius:4px;-webkit-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);-moz-box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);box-shadow:inset 0 2px 8px rgba(0, 0, 0, 0.8);}
-div.output_collapsed{margin:0px;padding:0px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
-div.out_prompt_overlay{height:100%;padding:0px 0.4em;position:absolute;border-radius:4px;}
-div.out_prompt_overlay:hover{-webkit-box-shadow:inset 0 0 1px #000000;-moz-box-shadow:inset 0 0 1px #000000;box-shadow:inset 0 0 1px #000000;background:rgba(240, 240, 240, 0.5);}
-div.output_prompt{color:darkred;}
 div.output_area{padding:0px;page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}div.output_area .MathJax_Display{text-align:left !important;}
 div.output_area .rendered_html table{margin-left:0;margin-right:0;}
 div.output_area .rendered_html img{margin-left:0;margin-right:0;}
 .output{display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;}
 div.output_area pre{font-family:monospace;margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;color:black;background-color:transparent;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;line-height:inherit;}
-div.output_subarea{padding:0.4em 0.4em 0em 0.4em;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;}
+div.output_subarea{padding:0.44em 0.4em 0.4em 1px;margin-left:6px;-webkit-box-flex:1;-moz-box-flex:1;box-flex:1;}
 div.output_text{text-align:left;color:#000000;font-family:monospace;line-height:1.231em;}
+div.output_stream{padding-top:0.0em;padding-bottom:0.0em;}
 div.output_stderr{background:#fdd;}
 div.output_latex{text-align:left;}
-div.output_javascript:empty{padding:0;}
 .js-error{color:darkred;}
 div.raw_input{padding-top:0px;padding-bottom:0px;height:1em;line-height:1em;font-family:monospace;}
 span.input_prompt{font-family:inherit;}
@@ -1555,11 +1553,24 @@ p.p-space{margin-bottom:10px;}
 .rendered_html *+p{margin-top:1em;}
 .rendered_html *+table{margin-top:1em;}
 .rendered_html *+img{margin-top:1em;}
-div.text_cell{padding:5px 5px 5px 0px;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
+div.text_cell{padding:5px 5px 5px 5px;}
 div.text_cell_input{color:#000000;border:1px solid #cfcfcf;border-radius:4px;background:#f7f7f7;}
 div.text_cell_render{outline:none;resize:none;width:inherit;border-style:none;padding:5px;color:#000000;}
 a.anchor-link:link{text-decoration:none;padding:0px 20px;visibility:hidden;}
 h1:hover .anchor-link,h2:hover .anchor-link,h3:hover .anchor-link,h4:hover .anchor-link,h5:hover .anchor-link,h6:hover .anchor-link{visibility:visible;}
+.widget-area{page-break-inside:avoid;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}.widget-area .widget-subarea{padding:0.44em 0.4em 0.4em 1px;margin-left:6px;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;-webkit-box-flex:2;-moz-box-flex:2;box-flex:2;}.widget-area .widget-subarea .widget-hlabel{min-width:10ex;padding-right:8px;text-align:right;vertical-align:text-top;padding-top:3px;}
+.widget-area .widget-subarea .widget-vlabel{text-align:center;vertical-align:text-bottom;padding-bottom:5px;}
+.widget-area .widget-subarea .widget-hslider{padding-left:8px;padding-right:5px;margin-top:11px;width:348px;height:5px !important;overflow:visible !important;border:1px solid #CCCCCC;background:#FFFFFF;border-radius:4px;}.widget-area .widget-subarea .widget-hslider .ui-slider{border:0px !important;background:none !important;}.widget-area .widget-subarea .widget-hslider .ui-slider .ui-slider-handle{width:14px !important;height:28px !important;margin-top:-8px !important;}
+.widget-area .widget-subarea .widget-vslider{border:1px solid #CCCCCC;background:#FFFFFF;width:5px;margin-left:12px;padding-bottom:14px;border-radius:4px;height:250px;}.widget-area .widget-subarea .widget-vslider .ui-slider{border:0px !important;background:none !important;margin-left:-4px;margin-top:5px;height:100%;}.widget-area .widget-subarea .widget-vslider .ui-slider .ui-slider-handle{width:28px !important;height:14px !important;margin-left:-9px;}
+.widget-area .widget-subarea .widget-text{width:350px;margin-bottom:0px;}
+.widget-area .widget-subarea .widget-numeric-text{width:150px;}
+.widget-area .widget-subarea .widget-progress{width:363px;}.widget-area .widget-subarea .widget-progress .bar{-webkit-transition:none;-moz-transition:none;-ms-transition:none;-o-transition:none;transition:none;}
+.widget-area .widget-subarea .widget-combo-btn{min-width:138px;height:30px;}
+.widget-area .widget-subarea .widget-container{box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
+.widget-area .widget-subarea .widget-box{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;margin:5px;}
+.widget-area .widget-subarea .widget-hbox{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;margin:5px;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;}
+.widget-area .widget-subarea .widget-hbox-single{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;margin:5px;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;height:30px;}
+.widget-area .widget-subarea .widget-vbox-single{-webkit-box-pack:start;-moz-box-pack:start;box-pack:start;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;margin:5px;display:-webkit-box;-webkit-box-orient:vertical;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:vertical;-moz-box-align:stretch;display:box;box-orient:vertical;box-align:stretch;width:100%;width:30px;}
 body{background-color:#ffffff;}
 body.notebook_app{overflow:hidden;}
 span#notebook_name{height:1em;line-height:1em;padding:3px;border:none;font-size:146.5%;}
@@ -1572,16 +1583,23 @@ pre,code,kbd,samp{white-space:pre-wrap;}
 #fonttest{font-family:monospace;}
 p{margin-bottom:0;}
 .end_space{height:200px;}
-.celltoolbar{border:thin solid #CFCFCF;border-bottom:none;background:#EEE;border-radius:3px 3px 0px 0px;width:100%;-webkit-box-pack:end;height:22px;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;-webkit-box-direction:reverse;-moz-box-direction:reverse;box-direction:reverse;}
+.celltoolbar{border:thin solid #CFCFCF;border-bottom:none;background:#EEE;border-top-right-radius:3px;border-top-left-radius:3px;width:100%;-webkit-box-pack:end;height:22px;display:-webkit-box;-webkit-box-orient:horizontal;-webkit-box-align:stretch;display:-moz-box;-moz-box-orient:horizontal;-moz-box-align:stretch;display:box;box-orient:horizontal;box-align:stretch;-webkit-box-direction:reverse;-moz-box-direction:reverse;box-direction:reverse;}
+.no_input_radius{border-top-right-radius:0px;border-top-left-radius:0px;}
+.text_cell .ctb_prompt{display:none;}
+.code_cell .ctb_prompt{display:block;}
 .ctb_hideshow{display:none;vertical-align:bottom;padding-right:2px;}
 .celltoolbar>div{padding-top:0px;}
-.ctb_global_show .ctb_show.ctb_hideshow{display:block;}
-.ctb_global_show .ctb_show+.input_area,.ctb_global_show .ctb_show+div.text_cell_input{border-top-right-radius:0px;border-top-left-radius:0px;}
+.ctb_area{margin:0;padding:0;width:100%;}
+.ctb_show.ctb_hideshow,.ctb_show .ctb_hideshow{display:block;}
+.ctb_show .input_area,.ctb_show .ctb_hideshow+div.text_cell_input{border-top-right-radius:0px;border-top-left-radius:0px;}
+.ctb_show>.celltoolbar{border-bottom-right-radius:0px;border-bottom-left-radius:0px;}
+.button_container{margin-top:0;margin-bottom:0;}
+.ui-button{min-width:30px;}
 .celltoolbar .button_container select{margin:10px;margin-top:1px;margin-bottom:0px;padding:0;font-size:87%;width:auto;display:inline-block;height:18px;line-height:18px;vertical-align:top;}
 .celltoolbar label{display:inline-block;height:15px;line-height:15px;vertical-align:top;}
 .celltoolbar label span{font-size:85%;}
 .celltoolbar input[type=checkbox]{margin:0px;margin-left:4px;margin-right:4px;}
-.celltoolbar .ui-button{border:none;vertical-align:top;height:20px;min-width:30px;}
+.celltoolbar .ui-button{border:none;vertical-align:top;height:20px;}
 .completions{position:absolute;z-index:10;overflow:hidden;border:1px solid #ababab;border-radius:4px;-webkit-box-shadow:0px 6px 10px -1px #adadad;-moz-box-shadow:0px 6px 10px -1px #adadad;box-shadow:0px 6px 10px -1px #adadad;}
 .completions select{background:white;outline:none;border:none;padding:0px;margin:0px;overflow:auto;font-family:monospace;font-size:110%;color:#000000;}
 .completions select option.context{color:#0064cd;}
@@ -1686,10 +1704,10 @@ html {
   overflow-y: auto;
 }
 .reveal {
-  font-size: 160%;
+  font-size: 20px;
 }
 .reveal pre {
-  width: inherit;
+  width: 95%;
   padding: 0.4em;
   margin: 0px;
   font-family: monospace, sans-serif;
@@ -1699,11 +1717,6 @@ html {
 .reveal section img {
   border: 0px solid black;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-}
-.reveal i {
-  font-style: normal;
-  font-family: FontAwesome;
-  font-size: 2em;
 }
 .reveal .slides {
   text-align: left;
@@ -7439,42 +7452,33 @@ In&nbsp;[29]:
 Books: &quot;Literate Computing&quot;
 </div>
 
-<p>By <a href="https://github.com/unpingco/Python-for-Signal-Processing">Jose Unpingco</a></p>
-</div>
-<div class="cell border-box-sizing code_cell">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[23]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">website</span><span class="p">(</span><span class="s">&#39;http://link.springer.com/book/10.1007/978-3-319-01342-8/page/1&#39;</span><span class="p">,</span>
-        <span class="s">&#39;Python for Signal Processing, featuring IPython Notebooks...&#39;</span><span class="p">)</span>
-</pre></div>
+<p>Python for Signal Processing, By <a href="https://github.com/unpingco/Python-for-Signal-Processing">Jose Unpingco</a></p>
+<table>
+<tr>
 
-</div>
-</div>
+<td>
+<ul>
+<li>
+<a href="http://link.springer.com/book/10.1007/978-3-319-01342-8/page/1" target=_blank>Springer hardcover</a> book
+</li>
+<li>
+Each chapter is an IPython Notebook
+</li>
+<li>
+Posted as a <a href="http://python-for-signal-processing.blogspot.com/">blog entry</a>
+</li>
+<li>
+And all available as a <a href="https://github.com/unpingco/Python-for-Signal-Processing">Github repo</a>
+</li>
+</ul>
+</td>
 
-<div class="output_wrapper">
-<div class="output">
+<td>
+<img src="fig/book_pfsp.jpg" width="60%">
+</td>
 
-
-<div class="output_area"><div class="prompt output_prompt">
-    Out[23]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-<div class="output_html rendered_html">
-<div sytle="margin-bottom:10px">
-<a href="http://link.springer.com/book/10.1007/978-3-319-01342-8/page/1">Python for Signal Processing, featuring IPython Notebooks...</a>
-</div>
-<iframe src="http://link.springer.com/book/10.1007/978-3-319-01342-8/page/1"  width="800" height="450">
-</div>
-
-</div>
-</div>
-
-</div>
-</div>
-
+</tr>
+</table>
 </div></section>
     </section><section>
     <section>
@@ -7526,41 +7530,29 @@ In&nbsp;[24]:
 ... &quot;Mining the Social Web&quot;
 </div>
 <p>By <a href="https://github.com/ptwobrussell">Matthew Russell</a>.</p>
-</div>
-<div class="cell border-box-sizing code_cell">
-<div class="input">
-<div class="prompt input_prompt">
-In&nbsp;[31]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">website</span><span class="p">(</span><span class="s">&#39;http://shop.oreilly.com/product/0636920010203.do&#39;</span><span class="p">,</span> 
-        <span class="s">&#39;Mining The Social Web&#39;</span><span class="p">)</span>
-</pre></div>
+<table>
+<tr>
 
-</div>
-</div>
+<td>
+<ul>
+<li>
+<a href="http://shop.oreilly.com/product/0636920010203.do" target=_blank>O'Reilly</a> book
+</li>
+<li>
+Companion Notebook collection
+</li>
+<li>
+All available as a <a href="https://github.com/ptwobrussell/Mining-the-Social-Web-2nd-Edition">Github repo</a>
+</li>
+</ul>
+</td>
 
-<div class="output_wrapper">
-<div class="output">
+<td>
+<img src="fig/book_mtsw.jpg" width="60%">
+</td>
 
-
-<div class="output_area"><div class="prompt output_prompt">
-    Out[31]:</div>
-<div class="box-flex1 output_subarea output_pyout">
-
-<div class="output_html rendered_html">
-<div sytle="margin-bottom:10px">
-<a href="http://shop.oreilly.com/product/0636920010203.do">Mining The Social Web</a>
-</div>
-<iframe src="http://shop.oreilly.com/product/0636920010203.do"  width="800" height="450">
-</div>
-
-</div>
-</div>
-
-</div>
-</div>
-
+</tr>
+</table>
 </div></section>
     </section><section>
     <section>
@@ -7634,15 +7626,16 @@ A simple and generic architecture
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="slide-header">
-A protocol that enables kernels other languages
+A protocol that enables kernels in other languages
 </div>
 
 <ul>
-<li>IJulia</li>
-<li>IHaskell</li>
-<li>IFSharp</li>
-<li>IRuby</li>
-<li>IGo</li>
+<li><a href="http://nbviewer.ipython.org/url/jdj.mit.edu/~stevenj/IJulia%20Preview.ipynb">IJulia</a></li>
+<li><a href="http://nbviewer.ipython.org/github/gibiansky/IHaskell/blob/master/demo/IHaskell.ipynb">IHaskell</a></li>
+<li><a href="http://nbviewer.ipython.org/github/BayardRock/IfSharp/blob/master/Feature%20Notebook.ipynb">IFSharp</a></li>
+<li><a href="http://nbviewer.ipython.org/github/minad/iruby/blob/master/IRuby-Example.ipynb">IRuby</a></li>
+<li><a href="https://github.com/takluyver/igo">IGo</a></li>
+<li><a href="https://github.com/mattpap/IScala">IScala</a></li>
 <li>In planning stages: R and Matlab.</li>
 </ul>
 <p>The interactive widget architecture is also 100% language-agnostic</p>
